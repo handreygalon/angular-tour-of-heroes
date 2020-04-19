@@ -24,7 +24,7 @@ export class HeroService {
     // return an Observable<Hero[]>, i.e. an observable of hero arrays
     return this.http.get<Hero[]>(this.heroesUrl)
     .pipe(
-      tap(_ => this.log('fetched heroes')),
+      tap(_ => this.log('fetched heroes')), // heroes => this.log('fetched heroes')
       catchError(this.handleError<Hero[]>('getHeroes', []))
     );
     // return of(HEROES); -> of(HEROES) returns an Observable<Hero[]> that emits a single value, the array of mock heroes.
